@@ -81,7 +81,7 @@ finish
 **비동기(Async)**
 
 ```
- 작업을 다른 Thread에서 하도록 시킨 후, 그 작업이 끝나길 "안 기다리고" 다음 일을 진행
+작업을 다른 Thread에서 하도록 시킨 후, 그 작업이 끝나길 "안 기다리고" 다음 일을 진행
 ```
 
 ```javascript
@@ -130,18 +130,64 @@ const foo = () => 1 + 1;
 
 즉 redux-thunk는 객체 대신 함수를 생성하는 액션 생성 함수를 작성할 수 있게 해준다.
 
-일반적인 dispatch 예시
+**일반적인 dispatch 예시**
 
 ```javascript
 store dispatch({type: 'DO_SOMETHING' })
 ```
 
-Redux-Thunk dispatch 예시
+**Redux-Thunk dispatch 예시**
 
 ```javascript
 store.dispatch((dispatch, getState) => {
   dispatch({ type: DO_SOMETHING });
 });
 ```
+
+---
+
+## redux-thunk의 특징
+
+- 유용한 함수와 리듀서를 만들어 상태를 관리하면 깔끔하게 기능을 구현할 수 있다.
+- redux-thunk는 네트워크 요청과 같은 비동기 작업을 관리하면 매우 유용하다.
+- 특정한 조건이 만족되면 디스패치 할 수 있는 기능이 있다.
+
+---
+
+## Promise 란?
+
+Promise는 자바스크립트 비동기 처리에 사용되는 객체
+
+promise 객체는 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타낸다.
+
+Promise는 프로미스가 생성될 때 꼭 알 수 있지는 않은 값을 위한 대리자로, 비동기 연산이 종료된 이후의 결과값이나 실패 이유를 처리하기 위한 처리기를 연결할 수 있도록 한다.
+
+Promise를 사용하면 비동기 메서드에서 마치 동기 메서드처럼 값을 반환할 수 있다.
+
+Promise는 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용한다.
+
+---
+
+## Promise의 3가지 상태(states)
+
+Promise의 처리 과정
+
+new Promise()로 Promise를 생성하고 종료될 때까지 3가지 상태를 갖는다.
+
+1. Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은 상태
+
+2. Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
+
+3. Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
+
+---
+
+## Promise를 다루는 Redux 모듈을 다룰 때 고려사항
+
+1. Promise가 시작, 성공, 실패했을 때 다른 액션을 디스패치해야한다.
+
+2. 각 Promise마다 thunk 함수를 만들어주어야 한다.
+
+3. 리듀서에서 액션에 따라 로딩 중, 결과, 에러 상태를 변경해주어야 한다.
 
 ---
