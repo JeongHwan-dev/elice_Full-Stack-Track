@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 // 버튼 클릭된 횟수를 저장
 let value = 0;
@@ -21,7 +19,7 @@ function tick() {
     </div>
   );
   // ReactDOM에 element를 렌더링합니다.
-  ReactDOM.render(element, document.getElementById('root'));
+  ReactDOM.render(element, document.getElementById("root"));
 }
 
 // 1초마다 tick()함수 호출
