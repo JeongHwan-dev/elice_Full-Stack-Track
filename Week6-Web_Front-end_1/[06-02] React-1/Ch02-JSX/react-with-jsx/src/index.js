@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
 // 함수를 정의합니다.
 function output(str1) {
@@ -10,7 +10,7 @@ function output(str1) {
 
 // 고객의 이름을 출력하는 함수
 function formatName(user) {
-  return user.lastName + ' ' + user.firstName;
+  return user.lastName + " " + user.firstName;
 }
 
 // 인사 문구를 출력하는 함수
@@ -23,9 +23,9 @@ const name = "Josh Perez";
 
 // 고객의 이름을 저장하는 변수
 const user = {
-  lastName: '코딩하는',
-  firstName: '엘리스'
-}
+  lastName: "코딩하는",
+  firstName: "엘리스",
+};
 
 // HTML을 JSX로 변환하여 element에 저장합니다.
 // 표현식을 사용하여 name 을 포함합니다.
@@ -47,5 +47,4 @@ const element = (
   </div>
 );
 
-
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(element, document.getElementById("root"));
