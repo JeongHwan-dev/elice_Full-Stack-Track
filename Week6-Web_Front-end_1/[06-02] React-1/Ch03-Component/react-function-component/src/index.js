@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 // 함수 컴포넌트
 
@@ -17,4 +15,4 @@ function Welcome() {
 // 컴포넌트를 호출하여 element에 저장합니다.
 const element = <Welcome />;
 
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(element, document.getElementById("root"));
