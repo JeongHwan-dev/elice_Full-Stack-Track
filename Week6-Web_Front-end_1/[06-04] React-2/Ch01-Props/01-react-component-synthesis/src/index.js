@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 // 함수 컴포넌트를 사용하여 Subject 컴포넌트를 정의합니다.
 function Subject(props) {
@@ -21,4 +19,4 @@ function Curriculum() {
 }
 
 // Curriculum을 ReactDOM과 렌더링합니다.
-ReactDOM.render(<Curriculum />, document.getElementById('root'));
+ReactDOM.render(<Curriculum />, document.getElementById("root"));

@@ -1,40 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 class InputUserData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "엘리스 토끼",
-      job: "developer"
+      job: "developer",
     };
   }
 
   // name 데이터를 변경하는 메소드
-  onNameHandler = event => {
+  onNameHandler = (event) => {
     // setState 를 사용해 name 데이터 업데이트 기능을 구현합니다.
     this.setState({
-      name: event.target.value
+      name: event.target.value,
     });
   };
 
   // job 데이터를 변경하는 메소드
-  onJobHandler = event => {
+  onJobHandler = (event) => {
     // setState 를 사용해 job 데이터 업데이트 기능을 구현합니다.
     this.setState({
-      job: event.target.value
+      job: event.target.value,
     });
   };
 
   onClickEventHandler = () => {
     alert("이름: " + this.state.name + ", 직업: " + this.state.job);
-  }
+  };
 
   render() {
-    const {name, job} = this.state;
+    const { name, job } = this.state;
     return (
       <div>
         <div>
@@ -51,4 +49,4 @@ class InputUserData extends React.Component {
   }
 }
 
-ReactDOM.render(<InputUserData />, document.getElementById('root'));
+ReactDOM.render(<InputUserData />, document.getElementById("root"));
