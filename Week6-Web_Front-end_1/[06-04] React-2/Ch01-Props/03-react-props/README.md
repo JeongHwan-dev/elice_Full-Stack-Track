@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Props
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Props는 컴포넌트 값을 전달하는 역할을 수행한다.
 
-## Available Scripts
+컴포넌트는 Props를 수정할 수 없는 순수 함수로 정의된다.
 
-In the project directory, you can run:
+**순수함수 예시**
 
-### `yarn start`
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**순수함수가 아닌 예시**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```javascript
+function withdraw(account, amount) {
+  account.total -= amount;
+}
+```
 
-### `yarn test`
+Props는 컴포넌트 호출 시, 인자값의 이름과 내용을 함께 제공한다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+컴포넌트 내에서 props.[이름]의 형식으로 인자값을 받아 사용한다.
 
-### `yarn build`
+**Props 예시**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+function UserInfo(props) {
+  return (
+    <div className="UserInfo">
+      <div>영화: {props.name}</div>
+      <div>한줄평: {props.text}</div>
+    </div>
+  );
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const element = (
+  <div>
+    <UserInfo name="겨울왕국" text="엘사가 너무 예뻐요!" />
+    <UserInfo name="신과함께" text="배우님 연기력 최고" />
+  </div>
+);
+```
