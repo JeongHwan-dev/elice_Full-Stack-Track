@@ -1,4 +1,4 @@
-# setState()
+## setState()
 
 **State**를 변경하기 위해서는 직접 값을 수정하는 것이 아니라 setState() 메소드를 이용해야 한다.
 

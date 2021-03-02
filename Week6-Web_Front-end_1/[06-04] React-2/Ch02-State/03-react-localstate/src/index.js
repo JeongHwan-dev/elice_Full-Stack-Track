@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 // 현재 시간을 출력하는 컴포넌트
 class Clock extends React.Component {
