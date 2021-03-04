@@ -1,6 +1,4 @@
 """
-주방장 도도새
-
 [입력 예시]
 6 180
 45 30 55 20 80 20
@@ -9,6 +7,7 @@
 [출력 예시]
 4
 """
+
 order_num, office_hour = map(int, input().split())
 orders_list = list(map(int, input().split()))
 

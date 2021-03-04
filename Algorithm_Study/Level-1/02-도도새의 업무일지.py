@@ -1,6 +1,4 @@
 """
-도도새의 업무일지
-
 [입력 예시]
 5
 1 2 2 3 4
@@ -8,6 +6,7 @@
 [출력 예시]
 1 3 2 6 8
 """
+
 day = int(input())
 b_record = list(map(int, input().split()))
 
